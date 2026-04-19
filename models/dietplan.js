@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     }
   }, {
-    timestamps: true // ✅ هنا المكان الصحيح
+    timestamps: true 
   });
 
   DietPlan.associate = function(models) {
