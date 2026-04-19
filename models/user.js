@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       len: [6, 100]
     }
   }, {
-    timestamps: true // 
+    timestamps: true 
   });
 
   User.associate = function(models) {
