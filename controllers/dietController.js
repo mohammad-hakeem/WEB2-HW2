@@ -1,6 +1,5 @@
 const { DietPlan, User } = require("../models");
 
-// 🍽️ إنشاء خطة غذائية
 exports.generateDiet = async (req, res) => {
   try {
     const {
@@ -32,14 +31,14 @@ exports.generateDiet = async (req, res) => {
 };
 
 
-// 📥 جلب كل الخطط مع المستخدم
+
 exports.getDiets = async (req, res) => {
   try {
     const diets = await DietPlan.findAll({
       include: [
         {
           model: User,
-          as: "user", // ⚠️ مهم جداً (نفس alias في العلاقات)
+          as: "user", 
           attributes: ["id", "name", "email"]
         }
       ]
@@ -54,7 +53,7 @@ exports.getDiets = async (req, res) => {
 };
 
 
-// 💾 حفظ خطة (اختياري إذا تستخدم save endpoint)
+
 exports.createDietPlan = async (req, res) => {
   try {
     const { planData, userId } = req.body;
